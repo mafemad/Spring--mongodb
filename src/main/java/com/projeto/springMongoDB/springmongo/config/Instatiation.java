@@ -34,11 +34,16 @@ public class Instatiation implements CommandLineRunner{
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
 		
+		userRepo.saveAll(Arrays.asList(maria,alex,bob));
+		
 		Post post1 = new Post(null, sdf.parse("21/03/2024"), "partiu viagem", "Vou para caçapava, lessss go", new AuthorDTO(maria));
 		Post post2 = new Post(null, sdf.parse("21/04/2024"), "adoro comer sushi", "sushi e sashimi sao as melhores coisas",new AuthorDTO(maria));
 		
-		userRepo.saveAll(Arrays.asList(maria,alex,bob));
+		
 		postRepo.saveAll(Arrays.asList(post1,post2));
+		
+		maria.getPosts().addAll(Arrays.asList(post1,post2));
+		userRepo.save(maria);
 		
 		
 	}
