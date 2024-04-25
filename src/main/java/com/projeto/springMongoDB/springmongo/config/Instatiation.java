@@ -38,7 +38,7 @@ public class Instatiation implements CommandLineRunner{
 		userRepo.saveAll(Arrays.asList(maria,alex,bob));
 		
 		Post post1 = new Post(null, sdf.parse("21/03/2024"), "partiu viagem", "Vou para caçapava, lessss go", new AuthorDTO(maria));
-		Post post2 = new Post(null, sdf.parse("21/04/2024"), "adoro comer sushi", "sushi e sashimi sao as melhores coisas",new AuthorDTO(maria));
+		Post post2 = new Post(null, sdf.parse("21/04/2024"), "Bom dia", "sushi e sashimi sao as melhores coisas",new AuthorDTO(maria));
 		
 		CommentDTO c1 = new CommentDTO("boa viagem mano!", sdf.parse("25/03/2024"), new AuthorDTO(alex));
 		CommentDTO c2 = new CommentDTO("aproveite!", sdf.parse("22/03/2024"), new AuthorDTO(bob));
